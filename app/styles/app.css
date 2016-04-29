@@ -1,0 +1,12 @@
+.modal-backdrop {
+  opacity: 0.6;
+  z-index: 0;
+}
+
+.ember-power-select-trigger {
+    padding: 4px 16px 4px 8px;
+}
+
+.ember-basic-dropdown-content {
+  z-index: 1000100; /*must be greater than liquid-outlet's z-index*/
+}

@@ -1,3 +1,17 @@
 <h2 id="title">Welcome to Ember</h2>
 
-{{outlet}}
+<div class="row" style="margin: 0 20px">
+  <div class="col-md-12">
+    <ul class="nav nav-tabs">
+      <li role="presentation" class="active">{{link-to 'Posts' 'posts'}}</li>
+
+    </ul>    
+  </div>
+
+
+    <div class="col-md-12">
+      {{outlet}}
+    </div>
+</div>
+
+

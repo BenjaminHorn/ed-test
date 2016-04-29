@@ -1,0 +1,47 @@
+{{#liquid-tether 
+  to="page"
+  target="document.body"
+  targetModifier="visible"
+  attachment="middle center"
+  tetherClass="modal-dialog page"
+  overlayClass="modal-backdrop"}}
+  <div class="modal-content" >
+    <div class="modal-header">
+      <h4 class="modal-title">Edit </h4>
+    </div>
+    <div class="modal-body">
+      {{bs-input value=model.post.title}}
+      <h4>Comments</h4>
+      {{#each model.post.comments as |comment|}}
+      <div class="panel panel-default">
+        <div class="panel-body">
+          <div class="row">
+            <div class="col-md-6">
+              {{bs-input value=comment.text}}
+            </div>
+
+            <div class="col-md-6">
+              {{#power-select
+                options=model.authors
+                selected=comment.author
+                onchange=(action (mut comment.author))
+                as |option|
+              }}   
+                {{option.name}}
+              {{/power-select}}
+            </div>
+          </div>
+        </div>
+      </div>
+      {{/each}}
+    </div>
+
+
+    <div class="modal-footer">
+
+      <button class="btn btn-primary" {{action 'back'}}>Back</button>      
+      
+    </div>
+  </div>
+{{/liquid-tether}}
+{{outlet}}

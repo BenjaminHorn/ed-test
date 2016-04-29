@@ -1,0 +1,13 @@
+<table class="table table-striped">
+  <thead>
+    <tr><td>Title</td></tr>
+  </thead>
+  <tbody>
+    {{#each model as |post|}}
+      <tr><td>{{link-to post.title 'posts.edit' post.id}}</td></tr>
+    {{/each}}    
+  </tbody>
+
+</table>
+
+{{outlet}}
